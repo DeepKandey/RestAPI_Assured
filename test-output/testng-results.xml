@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="1" total="4" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="10529" started-at="2018-09-09T05:12:32Z" finished-at="2018-09-09T05:12:43Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="10529" started-at="2018-09-09T05:12:32Z" finished-at="2018-09-09T05:12:43Z">
+      <class name="com.qa.rests.test.WeatherGetTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.rests.test.WeatherGetTest@47c62251]" name="setUp" is-config="true" duration-ms="8" started-at="2018-09-09T05:12:35Z" finished-at="2018-09-09T05:12:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getWeatherDetailsWithCorrectCityNameTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.qa.rests.test.WeatherGetTest@47c62251]" name="getWeatherDetailsWithCorrectCityNameTest" duration-ms="5144" started-at="2018-09-09T05:12:35Z" data-provider="getData" finished-at="2018-09-09T05:12:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Pune]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[GET]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[75 Percent]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[13.123 Degree celsius]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[clear sky]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1.35 Km per hour]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[114.5 Degree]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getWeatherDetailsWithCorrectCityNameTest -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.rests.test.WeatherGetTest@47c62251]" name="setUp" is-config="true" duration-ms="1" started-at="2018-09-09T05:12:41Z" finished-at="2018-09-09T05:12:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getWeatherDetailsWithCorrectCityNameTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.qa.rests.test.WeatherGetTest@47c62251]" name="getWeatherDetailsWithCorrectCityNameTest" duration-ms="1115" started-at="2018-09-09T05:12:41Z" data-provider="getData" finished-at="2018-09-09T05:12:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[GET]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[82 Percent]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[21.18 Degree celsius]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[few clouds]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2.1 Km per hour]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[100 Degree]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getWeatherDetailsWithCorrectCityNameTest -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.rests.test.WeatherGetTest@47c62251]" name="setUp" is-config="true" duration-ms="4" started-at="2018-09-09T05:12:42Z" finished-at="2018-09-09T05:12:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getWeatherDetailsWithCorrectCityNameTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.qa.rests.test.WeatherGetTest@47c62251]" name="getWeatherDetailsWithCorrectCityNameTest" duration-ms="1209" started-at="2018-09-09T05:12:42Z" data-provider="getData" finished-at="2018-09-09T05:12:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[New Delhi]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[GET]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[82 Percent]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[21.18 Degree celsius]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[few clouds]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2.1 Km per hour]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[100 Degree]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getWeatherDetailsWithCorrectCityNameTest -->
+      </class> <!-- com.qa.rests.test.WeatherGetTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
