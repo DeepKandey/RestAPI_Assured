@@ -7,11 +7,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class TestUtil {
 
-	public static int RESPONSE_CODE_200 = 200; // successful API request OK
-	public static int RESPONSE_CODE_201 = 201; // created data
-	public static int RESPONSE_CODE_401 = 401; // Unauthorized
-	public static int RESPONSE_CODE_404 = 404; // not found
-	public static int RESPONSE_CODE_400 = 400; // Bad request
+	public final static int RESPONSE_CODE_200 = 200; // successful API request OK
+	public final static int RESPONSE_CODE_201 = 201; // created data
+	public final static int RESPONSE_CODE_401 = 401; // Unauthorized
+	public final static int RESPONSE_CODE_404 = 404; // not found
+	public final static int RESPONSE_CODE_400 = 400; // Bad request
 
 	public static String[][] getExcelData(String fileName, String sheetName) {
 		String[][] arrayData = null;
