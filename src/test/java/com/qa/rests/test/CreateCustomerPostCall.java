@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.http.Headers;
+import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -33,7 +34,8 @@ public class CreateCustomerPostCall {
 		httpRequest.body(jsonRequest.toJSONString());
 
 		// 6.Execute the request and get the response
-		Response httpResponse = httpRequest.post("/register");
+		Response httpResponse = httpRequest.request(Method.POST, "/register");
+		// Response httpResponse = httpRequest.post("/register");
 
 		// 7.Get the response body
 		String responseBody = httpResponse.getBody().asString();
@@ -52,5 +54,4 @@ public class CreateCustomerPostCall {
 		System.out.println("Status Line is --->" + statusLine);
 
 	}
-
 }

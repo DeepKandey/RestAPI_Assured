@@ -24,11 +24,11 @@ public class WeatherGetTest extends TestBase {
 
 	@DataProvider
 	public Object[][] getData() {
-		Object[][] weatherData = TestUtil.getExcelData("C:/Users/deepa/Downloads/APITestData.xlsx", "WeatherInfo");
+		Object[][] weatherData = TestUtil.getExcelData(TestUtil.TESTDATA_SHEET_PATH, TestUtil.WEATHER_SHEET_NAME);
 		return weatherData;
 	}
 
-	@Test(dataProvider="getData")
+	@Test(dataProvider = "getData")
 	public void getWeatherDetailsWithCorrectCityNameTest(String city, String HTTPMethod, String humidity,
 			String temperature, String weatherdescription, String windspeed, String winddirectiondegree) {
 
@@ -66,13 +66,14 @@ public class WeatherGetTest extends TestBase {
 		JsonPath jsonPathValue = httpResponse.jsonPath();
 		String cityName = jsonPathValue.get("City");
 		System.out.println("the value of city is -->" + cityName);
+		Assert.assertEquals(cityName, city);
 	}
 
-	@Test(enabled=false)
+	@Test(enabled = false)
 	public void getWeatherDetailsWithWrongCityNameTest() {
 
 		// 1.Define the base URL
-		RestAssured.baseURI = "http://restapi.demoqa.com/utilities/weather/city/New";
+		RestAssured.baseURI = prop.getProperty("ServiceUrl");
 
 		// 2.Define Http Request
 		RequestSpecification httpRequest = RestAssured.given();
@@ -88,7 +89,7 @@ public class WeatherGetTest extends TestBase {
 		// 5.get the status code and validate it.
 		int statusCode = httpResponse.getStatusCode();
 		System.out.println("Status Code is --->" + statusCode);
-		Assert.assertEquals(statusCode, 400);
+		Assert.assertEquals(statusCode, TestUtil.RESPONSE_CODE_400);
 
 		// 6.get the status line
 		System.out.println("the status line is--->" + httpResponse.getStatusLine());
