@@ -1,5 +1,7 @@
 package com.qa.rests.test;
 
+import java.util.HashMap;
+
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
@@ -20,13 +22,20 @@ public class PostCallWithJavaObjects {
 		// 2. Define the http request
 		RequestSpecification httpRequest = RestAssured.given();
 
+		HashMap<Object,Object> additionalDetails = new HashMap<Object,Object>();
+		additionalDetails.put("FirstName", "Deepak");
+		additionalDetails.put("LastName", "Rai");
+		additionalDetails.put("UserName", "test@19");
+		additionalDetails.put("Password", "test123");
+		additionalDetails.put("Email", "Deep#@gmail.com");
+		
 		// 3.Create a json object with all the fields
-		JSONObject jsonRequest = new JSONObject();
-		jsonRequest.put("FirstName", "Deepak");
-		jsonRequest.put("LastName", "Rai");
-		jsonRequest.put("UserName", "test@19");
-		jsonRequest.put("Password", "test123");
-		jsonRequest.put("Email", "Deep#@gmail.com");
+		JSONObject jsonRequest = new JSONObject(additionalDetails);
+//		jsonRequest.put("FirstName", "Deepak");
+//		jsonRequest.put("LastName", "Rai");
+//		jsonRequest.put("UserName", "test@19");
+//		jsonRequest.put("Password", "test123");
+//		jsonRequest.put("Email", "Deep#@gmail.com");
 
 		// 4.Add header
 		httpRequest.header("Content-Type", "application/json");

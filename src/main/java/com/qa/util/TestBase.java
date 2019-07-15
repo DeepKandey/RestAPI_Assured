@@ -13,7 +13,6 @@ public class TestBase {
 					System.getProperty("user.dir") + "/src/main/java/com/qa/config/config.properties");
 			prop.load(fis);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
