@@ -6,6 +6,7 @@ import java.util.Properties;
 public class TestBase {
 	public static Properties prop;
 
+	// Method to load the configuration properties file
 	public static void init() {
 		prop = new Properties();
 		try {
@@ -16,5 +17,4 @@ public class TestBase {
 			e.printStackTrace();
 		}
 	}
-
 }

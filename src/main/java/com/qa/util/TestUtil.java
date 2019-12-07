@@ -13,7 +13,7 @@ public class TestUtil {
 	public final static int RESPONSE_CODE_404 = 404; // not found
 	public final static int RESPONSE_CODE_400 = 400; // Bad request
 
-	public static String TESTDATA_SHEET_PATH = "C:/Users/deepa/Downloads/APITestData.xlsx";
+	public static String TESTDATA_SHEET_PATH = "C:/Deepak Contents/Learning/API/APITestData.xlsx";
 	public static String WEATHER_SHEET_NAME = "WeatherInfo";
 
 	public static String[][] getExcelData(String filePath, String sheetName) {

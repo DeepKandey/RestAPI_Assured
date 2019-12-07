@@ -38,34 +38,34 @@ public class WeatherGetTest extends TestBase {
 		// 2.Define Http Request
 		RequestSpecification httpRequest = RestAssured.given();
 
-		// 3.make a request/ execute this request
+		// 3.Make a request/ execute this request
 		Response httpResponse = httpRequest.request(Method.GET, "/" + city);
 
-		// 4.get the response body
+		// 4.Get the response body
 		String responseBody = httpResponse.getBody().asString();
-		System.out.println("Response Body is-->" + responseBody);
+		System.out.println("Response Body is-->\n" + responseBody);
 		Assert.assertEquals(responseBody.contains(city), true);
 
-		// 5.get the status code and validate it.
+		// 5.Get the status code and validate it.
 		int statusCode = httpResponse.getStatusCode();
-		System.out.println("Status Code is --->" + statusCode);
+		System.out.println("Status Code is ---> " + statusCode);
 		Assert.assertEquals(statusCode, TestUtil.RESPONSE_CODE_200);
 
-		// 6.get the status line
-		System.out.println("the status line is--->" + httpResponse.getStatusLine());
+		// 6.Get the status line
+		System.out.println("the status line is--->\n" + httpResponse.getStatusLine());
 
-		// get reponse header
+		// 7.Get response header
 		Headers headers = httpResponse.getHeaders();
 		System.out.println(headers);
-		System.out.println("Content type from response object-->" + httpResponse.getHeader("Content-Type"));
-		System.out.println("Content type from header object-->" + headers.get("Content-Type"));
+		System.out.println("Content type from response object--> " + httpResponse.getHeader("Content-Type"));
+		System.out.println("Content type from header object--> " + headers.get("Content-Type"));
 		String content_length = httpResponse.getHeader("Content-Length");
-		System.out.println("Content length from header object-->" + content_length);
-
-		// get the key value by using JSONPath
+		System.out.println("Content length from response object--> " + content_length);
+		
+		// Get the key value by using JSONPath
 		JsonPath jsonPathValue = httpResponse.jsonPath();
 		String cityName = jsonPathValue.get("City");
-		System.out.println("the value of city is -->" + cityName);
+		System.out.println("the value of city is --> " + cityName);
 		Assert.assertEquals(cityName, city);
 	}
 
@@ -78,23 +78,23 @@ public class WeatherGetTest extends TestBase {
 		// 2.Define Http Request
 		RequestSpecification httpRequest = RestAssured.given();
 
-		// 3.make a request/ execute this request
+		// 3.Make a request/ execute this request
 		Response httpResponse = httpRequest.request(Method.GET, "/test123");
 
-		// 4.get the response body
+		// 4.Get the response body
 		String responseBody = httpResponse.getBody().asString();
 		System.out.println("Response Body is-->" + responseBody);
 		Assert.assertEquals(responseBody.contains("internal error"), true);
 
-		// 5.get the status code and validate it.
+		// 5.Get the status code and validate it.
 		int statusCode = httpResponse.getStatusCode();
 		System.out.println("Status Code is --->" + statusCode);
 		Assert.assertEquals(statusCode, TestUtil.RESPONSE_CODE_400);
 
-		// 6.get the status line
+		// 6.Get the status line
 		System.out.println("the status line is--->" + httpResponse.getStatusLine());
 
-		// get reponse header
+		// 7.Get response header
 		Headers headers = httpResponse.getHeaders();
 		System.out.println(headers);
 
