@@ -38,7 +38,7 @@ public class OAuthTest {
 		// 3. Define OAuthRequestSpecification
 		RequestSpecification oAuthRequestSpecification = authenticationSpecification.oauth("rcXYPa3ic1bBtwTXsJ2u7G9op",
 				"wK8FvQeIrmkunpvjLFSjcPCjbQu8HoNbi9816Gf5WEJl1iqeZR",
-				"832787898-mYoOZUWsUiAPQedQetCDld9FkTDAy1u2z5NSKMzI", "KBvHxbZaOyfKMmmCVeIzPLPQBuLKoNKZbpb4UP12UG9Wo");
+				"832787898-mYoOZUWsUiAPQedQetCDld9FkTDAy1u2z5NSKMzI", "KvHxbZaOyfKMmmCVeIzPLPQuLKoNKZbpbUP12UG9Wo");
 
 		// 4. POST the request
 		Response oAuthResponse2 = oAuthRequestSpecification.request(Method.POST,
@@ -63,7 +63,7 @@ public class OAuthTest {
 		// Destroy Tweet
 		RequestSpecification oAuthRequestSpecificationForDelete = authenticationSpecification.oauth(
 				"rcXYPa3ic1bBtwTXsJ2u7G9op", "wK8FvQeIrmkunpvjLFSjcPCjbQu8HoNbi9816Gf5WEJl1iqeZR",
-				"832787898-mYoOZUWsUiAPQedQetCDld9FkTDAy1u2z5NSKMzI", "KBvHxbZaOyfKMmmCVeIzPLPQBuLKoNKZbpb4UP12UG9Wo");
+				"832787898-mYoOZUWsUiAPQedQetCDld9FkTDAyu2z5NSKMzI", "KvHxbZaOyfKMmmCVeIzPLPQBuLKoNKZbpbUP12UG9Wo");
 
 		Response oAuthresponseForDelete = oAuthRequestSpecificationForDelete.request(Method.POST,
 				"https://api.twitter.com/1.1/statuses/destroy/" + tweetId + ".json");
