@@ -49,4 +49,4 @@ public class CookieBasedAuthentication {
 
 		System.out.println("Response Body for creating issue on JIRA: " + issueResponse.body().jsonPath().prettify());
 	}
-}
+}// End of class CookieBasedAuthentication
