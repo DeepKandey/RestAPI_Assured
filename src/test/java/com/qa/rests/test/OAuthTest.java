@@ -29,7 +29,7 @@ public class OAuthTest {
 
 		/*----------Sequence wise-------------*/
 
-		// 1. Define Http Request
+		// 1. Define Request/Client
 		RequestSpecification requestSpecification = RestAssured.given();
 
 		// 2. Define Authentication
@@ -44,7 +44,7 @@ public class OAuthTest {
 		Response oAuthResponse2 = oAuthRequestSpecification.request(Method.POST,
 				"https://api.twitter.com/1.1/statuses/update.json?status=This is tweet via API");
 
-		// 5. Status Code
+		// 5. Status Code for the tweet
 		System.out.println("Response Code for the tweet:--> " + oAuthResponse2.getStatusCode());
 
 		// 6. Response Body
@@ -60,7 +60,7 @@ public class OAuthTest {
 		String tweetId = jsonPathResponse.get("id_str");
 		System.out.println("My tweet id is--> " + tweetId);
 
-		// Destroy Tweet
+		// 9. Destroy Tweet
 		RequestSpecification oAuthRequestSpecificationForDelete = authenticationSpecification.oauth(
 				"rcXYPa3ic1bBtwTXsJ2u7G9op", "wK8FvQeIrmkunpvjLFSjcPCjbQu8HoNbi9816Gf5WEJl1iqeZR",
 				"832787898-mYoOZUWsUiAPQedQetCDld9FkTDAyu2z5NSKMzI", "KvHxbZaOyfKMmmCVeIzPLPQBuLKoNKZbpbUP12UG9Wo");
@@ -68,7 +68,7 @@ public class OAuthTest {
 		Response oAuthresponseForDelete = oAuthRequestSpecificationForDelete.request(Method.POST,
 				"https://api.twitter.com/1.1/statuses/destroy/" + tweetId + ".json");
 
+		// 10. Response code when deleted tweet
 		System.out.println("Response Code for deleting tweet:--> " + oAuthresponseForDelete.getStatusCode());
-
 	}
 }

@@ -35,7 +35,7 @@ public class WeatherGetTest extends TestBase {
 		// 1.Define the base URL
 		RestAssured.baseURI = prop.getProperty("ServiceUrl");
 
-		// 2.Define Http Request
+		// 2.Define Request/client
 		RequestSpecification httpRequest = RestAssured.given();
 
 		// 3.Make a request/ execute this request
@@ -61,7 +61,7 @@ public class WeatherGetTest extends TestBase {
 		System.out.println("Content type from header object--> " + headers.get("Content-Type"));
 		String content_length = httpResponse.getHeader("Content-Length");
 		System.out.println("Content length from response object--> " + content_length);
-		
+
 		// Get the key value by using JSONPath
 		JsonPath jsonPathValue = httpResponse.jsonPath();
 		String cityName = jsonPathValue.get("City");
@@ -78,7 +78,7 @@ public class WeatherGetTest extends TestBase {
 		// 2.Define Http Request
 		RequestSpecification httpRequest = RestAssured.given();
 
-		// 3.Make a request/ execute this request
+		// 3.Make a request and get the response
 		Response httpResponse = httpRequest.request(Method.GET, "/test123");
 
 		// 4.Get the response body
@@ -98,5 +98,5 @@ public class WeatherGetTest extends TestBase {
 		Headers headers = httpResponse.getHeaders();
 		System.out.println(headers);
 
-	}
-}
+	} // End of method getWeatherDetailsWithWrongCityNameTest
+} // End of class WeatherGetTest

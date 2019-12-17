@@ -16,5 +16,5 @@ public class TestBase {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-}
+	} // End of method init()
+}// End of class TestBase

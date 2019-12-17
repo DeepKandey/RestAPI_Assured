@@ -1,4 +1,4 @@
-package com.qa.rest.objects.JIRAObjects.ObjectsForJIRATask;
+package com.qa.rest.objects.ObjectsForJIRATask;
 
 public class IssueType {
 	private String name;

@@ -11,14 +11,14 @@ import io.restassured.specification.RequestSpecification;
 public class CookieBasedAuthentication {
 
 	@Test
-	public void createJsessionId() {
+	public void createTaskInJiraUsingCookie() {
 
 		// 1. Create Rest Client
 		RequestSpecification restClient = RestAssured.given();
-		// 2. Add content tyep in header
+		// 2. Add content type in header
 		restClient.contentType(ContentType.JSON);
 
-		// 3. Add Payload
+		// 3. Add Request Pay load
 		JSONObject json = new JSONObject();
 		json.put("username", "Deepakggsipu");
 		json.put("password", "jaishree@2024");
@@ -48,5 +48,5 @@ public class CookieBasedAuthentication {
 				.post("http://localhost:8080/rest/api/2/issue");
 
 		System.out.println("Response Body for creating issue on JIRA: " + issueResponse.body().jsonPath().prettify());
-	}
+	}// End of method 
 }// End of class CookieBasedAuthentication

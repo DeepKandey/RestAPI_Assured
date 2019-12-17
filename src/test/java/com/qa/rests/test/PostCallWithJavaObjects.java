@@ -19,7 +19,7 @@ public class PostCallWithJavaObjects {
 		// 1.Define the base URI
 		RestAssured.baseURI = "http://restapi.demoqa.com/customer";
 
-		// 2. Define the http request
+		// 2. Define the request/client
 		RequestSpecification httpRequest = RestAssured.given();
 
 		HashMap<Object,Object> additionalDetails = new HashMap<Object,Object>();

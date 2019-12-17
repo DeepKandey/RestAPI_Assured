@@ -5,24 +5,25 @@ import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qa.rest.objects.JIRAObjects.ObjectsForJIRATask.CreateJIRATask;
-import com.qa.rest.objects.JIRAObjects.ObjectsForJIRATask.Fields;
-import com.qa.rest.objects.JIRAObjects.ObjectsForJIRATask.IssueType;
-import com.qa.rest.objects.JIRAObjects.ObjectsForJIRATask.Project;
+import com.qa.rest.objects.ObjectsForJIRATask.CreateJIRATask;
+import com.qa.rest.objects.ObjectsForJIRATask.Fields;
+import com.qa.rest.objects.ObjectsForJIRATask.IssueType;
+import com.qa.rest.objects.ObjectsForJIRATask.Project;
+import com.qa.util.TestBase;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class CreateJIRATaskViaAPI {
+public class CreateJIRATaskUsingPOJO extends TestBase {
 	@SuppressWarnings("unchecked")
 	@Test
-	public void createJsessionId() throws JsonProcessingException {
+	public void createTaskInJiraUsingCookie() throws JsonProcessingException {
 
 		// 1. Create Rest Client
 		RequestSpecification restClient = RestAssured.given();
-		// 2. Add content tyep in header
+		// 2. Add content type in header
 		restClient.contentType(ContentType.JSON);
 
 		// 3. Add Payload
@@ -32,7 +33,7 @@ public class CreateJIRATaskViaAPI {
 		restClient.body(json);
 
 		// 4. Make the POST request
-		Response response = restClient.post("http://localhost:8080/rest/auth/1/session");
+		Response response = restClient.post(prop.getProperty("ServiceUrlForJIRA"));
 
 		// 5. Get the status Code
 		System.out.println("Status Code: " + response.getStatusCode());
@@ -44,7 +45,7 @@ public class CreateJIRATaskViaAPI {
 		System.out.println("Response Cookies: " + response.getCookies());
 		String JsessionId = response.getCookies().get("JSESSIONID");
 
-		// 8. Create payload
+		// 8. Create Request Pay load
 		Project project = new Project("AL");
 		String summary = "Hey, Task create using REST API";
 		String description = "Creating of an issue using project keys and issue type names using the REST API";
@@ -57,10 +58,10 @@ public class CreateJIRATaskViaAPI {
 		String jsonRequestBody = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(createJIRATask);
 		System.out.println("JSON Request Body: " + jsonRequestBody);
 
-		// 9. Creating issue
+		// 9. Execute request to create Task in JIRA
 		Response issueResponse = RestAssured.given().contentType(ContentType.JSON).cookie("JSESSIONID", JsessionId)
-				.body(jsonRequestBody).post("http://localhost:8080/rest/api/2/issue");
+				.body(jsonRequestBody).post(prop.getProperty("ServiceUrlToCreateIssue"));
 
-		System.out.println("Response Body for creating issue on JIRA: " + issueResponse.body().jsonPath().prettify());
-	}
+		System.out.println("Response Body for task created in JIRA: " + issueResponse.body().jsonPath().prettify());
+	}// End of method createJsessionId
 } // End of class CreateJIRATaskViaAPI

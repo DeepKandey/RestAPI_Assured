@@ -13,7 +13,7 @@ public class OAuth2Test {
 	@Test
 	public void OAuth2DemoUsingCOOP() {
 		/* Create Access Token */
-		// 1. Define Http Request and form parameters
+		// 1. Define Request/client and form parameters
 		RequestSpecification requestSpecificationForAccessToken = RestAssured.given()
 				.formParam("client_id", "MYRESTAPIBLOG").formParam("client_secret", "56c85800a3be74436880ff6cbcabf565")
 				.formParam("grant_type", "client_credentials");
