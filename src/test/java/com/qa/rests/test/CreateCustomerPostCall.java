@@ -1,66 +1,63 @@
 package com.qa.rests.test;
 
-import java.util.HashMap;
-
-import org.json.simple.JSONObject;
-import org.testng.annotations.Test;
-
 import io.restassured.RestAssured;
 import io.restassured.http.Headers;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import java.util.HashMap;
+import org.json.simple.JSONObject;
+import org.testng.annotations.Test;
 
 public class CreateCustomerPostCall {
 
-	@Test
-	public void createCustomerTest() {
-		// 1.Define the base URI
-		RestAssured.baseURI = "http://restapi.demoqa.com/customer";
+  @Test
+  public void createCustomerTest() {
+    // 1.Define the base URI
+    RestAssured.baseURI = "http://restapi.demoqa.com/customer";
 
-		// 2. Define the http request
-		RequestSpecification httpRequest = RestAssured.given();
-		
-		HashMap<Object,Object> additionalDetails = new HashMap<Object,Object>();
-		additionalDetails.put("FirstName", "Deepak");
-		additionalDetails.put("LastName", "Rai");
-		additionalDetails.put("UserName", "test190");
-		additionalDetails.put("Password", "test123");
-		additionalDetails.put("Email", "Deep@gmail.com");
+    // 2. Define the http request
+    RequestSpecification httpRequest = RestAssured.given();
 
-		// 3.Create a JSON object with all the fields
-		JSONObject jsonRequest = new JSONObject(additionalDetails);
-//		jsonRequest.put("FirstName", "Deepak");
-//		jsonRequest.put("LastName", "Rai");
-//		jsonRequest.put("UserName", "test190");
-//		jsonRequest.put("Password", "test123");
-//		jsonRequest.put("Email", "Deep@gmail.com");
+    HashMap<Object, Object> additionalDetails = new HashMap<Object, Object>();
+    additionalDetails.put("FirstName", "Deepak");
+    additionalDetails.put("LastName", "Rai");
+    additionalDetails.put("UserName", "test190");
+    additionalDetails.put("Password", "test123");
+    additionalDetails.put("Email", "Deep@gmail.com");
 
-		// 4.Add header
-		httpRequest.header("Content-Type", "application/json");
+    // 3.Create a JSON object with all the fields
+    JSONObject jsonRequest = new JSONObject(additionalDetails);
+    //		jsonRequest.put("FirstName", "Deepak");
+    //		jsonRequest.put("LastName", "Rai");
+    //		jsonRequest.put("UserName", "test190");
+    //		jsonRequest.put("Password", "test123");
+    //		jsonRequest.put("Email", "Deep@gmail.com");
 
-		// 5.Add json payload to the body of the request
-		httpRequest.body(jsonRequest.toJSONString());
+    // 4.Add header
+    httpRequest.header("Content-Type", "application/json");
 
-		// 6.Execute the request and get the response
-		Response httpResponse = httpRequest.request(Method.POST, "/register");
-		// Response httpResponse = httpRequest.post("/register");
+    // 5.Add json payload to the body of the request
+    httpRequest.body(jsonRequest.toJSONString());
 
-		// 7.Get the response body
-		String responseBody = httpResponse.getBody().asString();
-		System.out.println("Response Body is--->" + responseBody);
+    // 6.Execute the request and get the response
+    Response httpResponse = httpRequest.request(Method.POST, "/register");
+    // Response httpResponse = httpRequest.post("/register");
 
-		// 8.Get the headers
-		Headers headers = httpResponse.getHeaders();
-		System.out.println("headers are--->" + headers);
+    // 7.Get the response body
+    String responseBody = httpResponse.getBody().asString();
+    System.out.println("Response Body is--->" + responseBody);
 
-		// 9.Get the status code
-		int statusCode = httpResponse.getStatusCode();
-		System.out.println("Status Code is--->" + statusCode);
+    // 8.Get the headers
+    Headers headers = httpResponse.getHeaders();
+    System.out.println("headers are--->" + headers);
 
-		// 10.Get the Status Line
-		String statusLine = httpResponse.getStatusLine();
-		System.out.println("Status Line is --->" + statusLine);
+    // 9.Get the status code
+    int statusCode = httpResponse.getStatusCode();
+    System.out.println("Status Code is--->" + statusCode);
 
-	}
+    // 10.Get the Status Line
+    String statusLine = httpResponse.getStatusLine();
+    System.out.println("Status Line is --->" + statusLine);
+  }
 }

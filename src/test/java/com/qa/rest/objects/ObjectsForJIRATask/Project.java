@@ -1,17 +1,17 @@
 package com.qa.rest.objects.ObjectsForJIRATask;
 
 public class Project {
-	private String key;
+  private String key;
 
-	public String getKey() {
-		return key;
-	}
+  public String getKey() {
+    return key;
+  }
 
-	public void setKey(String key) {
-		this.key = key;
-	}
+  public void setKey(String key) {
+    this.key = key;
+  }
 
-	public Project(String key) {
-		this.key = key;
-	}
-}// End of class Project
+  public Project(String key) {
+    this.key = key;
+  }
+} // End of class Project

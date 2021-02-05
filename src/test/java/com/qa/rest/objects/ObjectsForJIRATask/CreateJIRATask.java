@@ -1,17 +1,17 @@
 package com.qa.rest.objects.ObjectsForJIRATask;
 
 public class CreateJIRATask {
-	Fields fields;
+  Fields fields;
 
-	public CreateJIRATask(Fields fields) {
-		this.fields = fields;
-	}
+  public CreateJIRATask(Fields fields) {
+    this.fields = fields;
+  }
 
-	public Fields getFields() {
-		return fields;
-	}
+  public Fields getFields() {
+    return fields;
+  }
 
-	public void setFields(Fields fields) {
-		this.fields = fields;
-	}
-}// End of class CreateJIRATask
+  public void setFields(Fields fields) {
+    this.fields = fields;
+  }
+} // End of class CreateJIRATask
